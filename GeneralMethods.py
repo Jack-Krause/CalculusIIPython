@@ -1,4 +1,7 @@
-class Solution:
+from fractions import Fraction
+
+
+class Sol:
     def __init__(self, n, a):
         self.a = a
         self.n = n
@@ -6,13 +9,16 @@ class Solution:
     def x(self):
         if self.n == 1:
             return 0.5
-        return Solution.g(self.n-1, self.a)
+        return Sol.g(self.n, self.a)
 
     @staticmethod
     def g(n, a):
         if n == 0:
             return 0.5
 
-        num = Solution.g(n-1, a)
-        return a * num * (1 - num)
+        x_n = Sol.g(n-1, a)
+        return a * x_n * (1 - x_n)
+
+    def show(self):
+        print(Fraction.from_float(self.x()))
 
