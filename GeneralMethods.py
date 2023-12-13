@@ -7,7 +7,7 @@ class Sol:
         self.n = n
 
     def x(self):
-        if self.n == 1:
+        if self.n == 0:
             return 0.5
         return Sol.g(self.n, self.a)
 
@@ -23,6 +23,6 @@ class Sol:
         print(Fraction.from_float(self.x()))
 
     def show(self):
-        print(format(self.x(), '.5f'))
+        print(str(self.n) + ": " + format(self.x(), '.4f'))
 
 
