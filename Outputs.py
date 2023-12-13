@@ -1,7 +1,8 @@
-from Work1 import x
+from fractions import Fraction
+import sympy as sym
+from GeneralMethods import Solution
 
-val = x(3)
-print(val)
+# a = sym.var("a")
 
 
 

@@ -1,17 +1,10 @@
 import sympy as sym
-a = sym.var("a")
+from GeneralMethods import Solution
+
+a = 0.5
+x1 = Solution(1, a).x()
+x2 = Solution(2, a).x()
 
 
-def x(i):
-    if i == 1:
-        return 0.5
-
-    return x(i-1) + 0.5
-
-
-
-
-
-
-
+print(x1, x2)
 
