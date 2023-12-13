@@ -19,6 +19,10 @@ class Sol:
         x_n = Sol.g(n-1, a)
         return a * x_n * (1 - x_n)
 
-    def show(self):
+    def fShow(self):
         print(Fraction.from_float(self.x()))
+
+    def show(self):
+        print(format(self.x(), '.5f'))
+
 

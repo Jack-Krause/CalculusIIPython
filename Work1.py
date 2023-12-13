@@ -10,4 +10,6 @@ x2 = Sol(2, a)
 
 x1.show()
 x2.show()
-
+x3 = Sol(3, a).show()
+x4 = Sol(4, a).show()
+x5 = Sol(5, a).show()
