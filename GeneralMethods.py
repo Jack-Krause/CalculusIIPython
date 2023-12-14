@@ -38,12 +38,12 @@ class Sequence:
     def findOccurrences(self):
         show_list = ['------'] * len(self.seq)
         counter = Counter(self.seq)
-        target = counter.most_common(1)[0][0]
-        occurrences = 0
+        target = [item[0] for item in counter.most_common(3)]
+        occurrences = {value: counter[value] for value in target}
 
         for i, value in enumerate(self.seq):
-            if value == target:
+            if value in target:
                 show_list[i] = value
-                occurrences += 1
+                occurrences[value] += 1
 
         return occurrences, show_list
