@@ -18,12 +18,15 @@ def showComparison(start, iterations):
         for key, value in occurrences.items():
             occurrences_str += "|" + str(key) + ":" + str(value) + "| "
 
-        print("<<" + str(start) + ">>")
+        print("<< a = " + str(start) + ">>")
         print(occurrences_str)
         print(a_x.sequence)
         print(visual)
         print()
 
 
-showComparison(a, 25)
-
+# showComparison(a, 25)
+# showComparison(3.55, 3)
+a_38 = Sol(100, 3.8284)
+a_38.x()
+print(a_38.sequence)

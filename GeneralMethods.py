@@ -20,7 +20,8 @@ class Sol:
 
         x_previous = self.g(n - 1)
         x_n = self.a * x_previous * (1 - x_previous)
-        app_x_n = round(x_n, 3)
+        # app_x_n = round(x_n, 3)
+        app_x_n = x_n
         self.sequence.append(app_x_n)
         return x_n
 
@@ -36,7 +37,7 @@ class Sequence:
         self.seq = seq
 
     def findOccurrences(self):
-        show_list = ['------'] * len(self.seq)
+        show_list = ['--'] * len(self.seq)
         counter = Counter(self.seq)
         target = [item[0] for item in counter.most_common(3)]
         occurrences = {value: counter[value] for value in target}
