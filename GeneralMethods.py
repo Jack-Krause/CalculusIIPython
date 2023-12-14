@@ -1,3 +1,4 @@
+from collections import Counter
 from fractions import Fraction
 
 
@@ -19,7 +20,7 @@ class Sol:
 
         x_previous = self.g(n - 1)
         x_n = self.a * x_previous * (1 - x_previous)
-        app_x_n = round(x_n, 4)
+        app_x_n = round(x_n, 3)
         self.sequence.append(app_x_n)
         return x_n
 
@@ -34,11 +35,14 @@ class Sequence:
     def __init__(self, seq):
         self.seq = seq
 
-    def findOccurrences(self, target):
+    def findOccurrences(self):
         show_list = ['------'] * len(self.seq)
+        counter = Counter(self.seq)
+        target = counter.most_common(1)[0][0]
+        print(target)
 
         for i, value in enumerate(self.seq):
-            if -0.3 < (value - target) < 0.3:
+            if value == target:
                 show_list[i] = value
 
         return show_list
