@@ -5,12 +5,12 @@ class Sol:
     def __init__(self, n, a):
         self.a = a
         self.n = n
-        self.sequence = []
+        self.sequence = [0.5]
 
     def x(self):
         if self.n == 0:
-            self.sequence.append(0.5)
             return 0.5
+
         return self.g(self.n)
 
     def g(self, n):
@@ -19,7 +19,8 @@ class Sol:
 
         x_previous = self.g(n - 1)
         x_n = self.a * x_previous * (1 - x_previous)
-        self.sequence.append(format(x_n, '.4f'))
+        app_x_n = round(x_n, 4)
+        self.sequence.append(app_x_n)
         return x_n
 
     def fShow(self):
@@ -29,5 +30,15 @@ class Sol:
         print(str(self.n) + ": " + format(self.x(), '.4f'))
 
 
+class Sequence:
+    def __init__(self, seq):
+        self.seq = seq
 
+    def findOccurrences(self, target):
+        show_list = ['------'] * len(self.seq)
 
+        for i, value in enumerate(self.seq):
+            if 0.3 < (value - target) < -0.3:
+                show_list[i] = '**' + str(value) + '**'
+
+        return show_list
