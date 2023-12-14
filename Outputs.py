@@ -28,11 +28,13 @@ def showComparison(start, iterations, terms):
 
 
 # showComparison(3.72, 3, 200)
-# showComparison(a, 25)
+# showComparison(a, 25, 200)
 
 p_sol = Sol(200, 3.75)
 p_sol.x()
 p_sequence = p_sol.sequence
+print(p_sequence)
+pl.figure(figsize=(8, 6))
 pl.plot(p_sequence, linestyle='-', marker='o', color='red')
 pl.grid(True)
 pl.show()
