@@ -39,10 +39,11 @@ class Sequence:
         show_list = ['------'] * len(self.seq)
         counter = Counter(self.seq)
         target = counter.most_common(1)[0][0]
-        print(target)
+        occurrences = 0
 
         for i, value in enumerate(self.seq):
             if value == target:
                 show_list[i] = value
+                occurrences += 1
 
-        return show_list
+        return occurrences, show_list
