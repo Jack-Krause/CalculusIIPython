@@ -1,3 +1,4 @@
+from collections import Counter
 from fractions import Fraction
 import sympy as sym
 from GeneralMethods import Sol
@@ -5,11 +6,11 @@ from GeneralMethods import Sequence
 
 a = 3.49
 
-def showComparison(start, iterations):
+def showComparison(start, iterations, terms):
 
     for i in range(iterations + 1):
         start = round(start + 0.01, 2)
-        a_x = Sol(100, start)
+        a_x = Sol(terms, start)
         a_x.x()
         seq_a = Sequence(a_x.sequence)
         occurrences, visual = seq_a.findOccurrences()
@@ -25,8 +26,10 @@ def showComparison(start, iterations):
         print()
 
 
+
+
+showComparison(3.72, 3, 200)
 # showComparison(a, 25)
-# showComparison(3.55, 3)
-a_38 = Sol(100, 3.8284)
-a_38.x()
-print(a_38.sequence)
+
+
+

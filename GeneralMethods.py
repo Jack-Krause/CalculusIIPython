@@ -20,8 +20,8 @@ class Sol:
 
         x_previous = self.g(n - 1)
         x_n = self.a * x_previous * (1 - x_previous)
-        # app_x_n = round(x_n, 3)
-        app_x_n = x_n
+        app_x_n = round(x_n, 4)
+        # app_x_n = x_n
         self.sequence.append(app_x_n)
         return x_n
 
