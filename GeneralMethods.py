@@ -38,7 +38,7 @@ class Sequence:
         show_list = ['------'] * len(self.seq)
 
         for i, value in enumerate(self.seq):
-            if 0.3 < (value - target) < -0.3:
-                show_list[i] = '**' + str(value) + '**'
+            if -0.3 < (value - target) < 0.3:
+                show_list[i] = value
 
         return show_list
