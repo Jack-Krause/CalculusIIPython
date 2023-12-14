@@ -3,6 +3,7 @@ from fractions import Fraction
 import sympy as sym
 from GeneralMethods import Sol
 from GeneralMethods import Sequence
+import matplotlib.pyplot as pl
 
 a = 3.49
 
@@ -26,8 +27,13 @@ def showComparison(start, iterations, terms):
         print()
 
 
-showComparison(3.72, 3, 200)
+# showComparison(3.72, 3, 200)
 # showComparison(a, 25)
 
-
+p_sol = Sol(200, 3.75)
+p_sol.x()
+p_sequence = p_sol.sequence
+pl.plot(p_sequence, linestyle='-', marker='o', color='red')
+pl.grid(True)
+pl.show()
 
